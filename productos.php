@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Abarrotes Ruben</title>
 </head>
 <body bgcolor="#7F9183">
     <h1>Tres tristes tigres tragaban trigo en un trigal</h1>
@@ -24,10 +24,11 @@
         if($comando->num_rows>0)
         {
             echo("Productos totales: ".$comando->num_rows);
-            echo "<table border='1' bgcolor='#B8B8AA'><tr><th colspan='3'>INVENTARIO DE ABARROTES RUBÉN</th><tr><th>Código</th><th>Producto</th></th><th>Precio</th></tr>";
+            echo "<table border='1' bgcolor='#B8B8AA'><tr><th colspan='5'>INVENTARIO DE ABARROTES RUBÉN</th><tr><th>Código</th><th>Producto</th></th><th>Precio</th><th>Eliminar</th><th>Modificar</th></tr>";
             while($registro=$comando->fetch_assoc())
             {
-                echo("\n\t<tr bgcolor='#B8B8AA'><td>".$registro["codigo"]."</td>\n\t<td>".$registro["nombre"]."</td>\n\t<td>". $registro["precio"]."</td></tr>\n");
+                echo("\n\t<tr bgcolor='#B8B8AA'><td>".$registro["codigo"]."</td>\n\t<td>".$registro["nombre"]."</td>\n\t<td>". $registro["precio"]."</td> <td><img src='./img/icon_delete.png'>
+                </td> <td><img src='./img/icon_update.png'></td> </tr>\n");
             }
             echo "</table>";
         }
@@ -36,12 +37,12 @@
         }
   
     ?>
-    <form action="insert.php" method="get">
+    <form action="insert.php" method="post">
         <fieldset style="width: 0px">
             <legend>Agregar nuevo producto</legend>
                 Codigo del producto: <input name="codigo" type="text" value='012'><br>
                 Nombre del producto: <input name="nombre" type="text" value='Caguama Miller'><br>
-                Precio del producto: <input type="text" value='25.00'><br>
+                Precio del producto: <input name="precio" type="text" value='25.00'><br>
             <input type="submit" value='Agregar producto'>       
         </fieldset>
     </form>
