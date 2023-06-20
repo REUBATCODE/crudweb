@@ -27,8 +27,11 @@
             echo "<table border='1' bgcolor='#B8B8AA'><tr><th colspan='5'>INVENTARIO DE ABARROTES RUBÉN</th><tr><th>Código</th><th>Producto</th></th><th>Precio</th><th>Eliminar</th><th>Modificar</th></tr>";
             while($registro=$comando->fetch_assoc())
             {
-                echo("\n\t<tr bgcolor='#B8B8AA'><td>".$registro["codigo"]."</td>\n\t<td>".$registro["nombre"]."</td>\n\t<td>". $registro["precio"]."</td> <td><img src='./img/icon_delete.png'>
-                </td> <td><img src='./img/icon_update.png'></td> </tr>\n");
+                echo("\n\t<tr bgcolor='#B8B8AA'><td>".$registro["codigo"].
+                "</td>\n\t<td>".$registro["nombre"]."</td>\n\t<td>". $registro["precio"].
+                "</td> <td> <a href='delete.php?codigo=".$registro['codigo']
+                ."'><img src='./img/icon_delete.png'>
+                </a></td> <td><img src='./img/icon_update.png'></td> </tr>\n");
             }
             echo "</table>";
         }
