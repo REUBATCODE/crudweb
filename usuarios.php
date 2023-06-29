@@ -1,3 +1,6 @@
+<?php
+    include('inc/functions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abarrotes Ruben</title>
+    <link rel="stylesheet" href="./css/estilo.css">
 </head>
 <body bgcolor="#7F9183">
-    Productos Usuarios <br>
     <?php
+        menu();
         /* PARA MOSTRAR ERRORES EN MAC */
         ini_set('display_errors', 1);       
         ini_set('display_startup_errors', 1);
@@ -34,8 +38,8 @@
                 <td>".$registro["password"]."</td>\n\t
                 <td>".$registro["rfc"]."</td>\n\t
                 <td>".$registro["curp"]."</td>\n\t
-                <td> <a href='delete.php?codigo=".$registro['email']."'> <img src='./img/icon_delete.png'> </a> </td> 
-                <td> <a href='update.php?codigo=".$registro['email']."'> <img src='./img/icon_update.png'> </a> </td> </tr>\n";
+                <td> <a href='delete_usuarios.php?email=".$registro['email']."'> <img src='./img/icon_delete.png'> </a> </td> 
+                <td> <a href='update_usuarios.php?email=".$registro['email']."'> <img src='./img/icon_update.png'> </a> </td> </tr>\n";
             }
             echo "</table>";
         }
@@ -57,5 +61,8 @@
             <input type="submit" value='Agregar usuario'>       
         </fieldset>
     </form>
+    <?php
+    footer();
+    ?>
 </body>
 </html>

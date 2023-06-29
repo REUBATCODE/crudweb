@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body bgcolor="PINK">
     <div class="header-nav">
-    <h1>Bienvenido al CRUD de Productos de Abarrotes Rubén</h1>
+    <h1>Inicio de Sesion</h1>
     </div>
-    <form action="productos.php">
-        <input type="email" name="" id="" placeholder="Correo electrónico" value="asd@asd.com" required> <br>
-        <input type="password" name="" id="" placeholder="Contraseña" value="asd" required> <br>
-        <input type="submit" value="Login">
+    <form action="validar.php" method="post">
+        <input type="email" name="correo" placeholder="Correo electrónico" value="cheno@weth.com"  required> <br>
+        <input type="password" name="contrasena" placeholder="Contraseña" value="asd" required> <br>
+        <input type="submit" value="Iniciar Sesion">
     </form>
+    <?php
+        if($_GET['error']==100){
+            echo "Se detecto usuario y/o contrasena incorrectos. Favor de intentar de nuevo.";
+        }
+    ?>
 </body>
 </html>

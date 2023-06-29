@@ -1,14 +1,18 @@
+<?php
+    include('inc/functions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilo.css">
     <title>Abarrotes Ruben</title>
 </head>
-<body bgcolor="#7F9183">
-    Productos Usuarios <br>
+<body bgcolor="#DA627D">
     <?php
+        menu();
         /* PARA MOSTRAR ERRORES EN MAC */
         ini_set('display_errors', 1);       
         ini_set('display_startup_errors', 1);
@@ -23,10 +27,10 @@
         if($comando->num_rows>0)
         {
             echo "Productos totales: ".$comando->num_rows;
-            echo "<table border='1' bgcolor='#B8B8AA'><tr><th colspan='5'>INVENTARIO DE ABARROTES RUBÉN</th><tr><th>Código</th><th>Producto</th></th><th>Precio</th><th>Eliminar</th><th>Modificar</th></tr>";
+            echo "<table border='1' bgcolor='#FFA5AB'><tr><th colspan='5'>INVENTARIO DE ABARROTES RUBÉN</th><tr><th>Código</th><th>Producto</th></th><th>Precio</th><th>Eliminar</th><th>Modificar</th></tr>";
             while($registro=$comando->fetch_assoc())
             {
-                echo "\n\t<tr bgcolor='#B8B8AA'><td>".$registro["codigo"].
+                echo "\n\t<tr bgcolor='#FFA5AB'><td>".$registro["codigo"].
                 "</td>\n\t<td>".$registro["nombre"]."</td>\n\t<td>". $registro["precio"]."</td> 
                 <td> <a href='delete.php?codigo=".$registro['codigo']."'> <img src='./img/icon_delete.png'> </a> </td> 
                 <td> <a href='update.php?codigo=".$registro['codigo']."'> <img src='./img/icon_update.png'> </a> </td> </tr>\n";
