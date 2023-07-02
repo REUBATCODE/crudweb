@@ -1,4 +1,7 @@
 <?php
+    include('./inc/functions');
+    validarUsuario();
+
     $codigo=$_GET['codigo'];
     
     try {

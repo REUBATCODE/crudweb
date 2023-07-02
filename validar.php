@@ -9,7 +9,11 @@
 
     if($comando->num_rows==1)
         {
+            //INICIAMOS SESION
+            session_start();
+            $_SESSION['usuario']=$_POST['correo'];
             header('location: menu.php');
+            
         }
         else
         {

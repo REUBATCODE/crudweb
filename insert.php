@@ -1,6 +1,7 @@
 <?php
+    include('./inc/functions');
+    validarUsuario();
     
-
     try {
         $queryinsert="INSERT INTO productos (codigo, nombre, precio) VALUES("."'".$_POST['codigo']."', "."'".$_POST['nombre']."'".", ".$_POST['precio'].");";
         /* ESTABLECEMOS LA CONEXIÓN*/

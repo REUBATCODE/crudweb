@@ -1,5 +1,6 @@
 <?php
     include('inc/functions.php');
+    validarUsuario();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@
     <title>Abarrotes Ruben</title>
     <link rel="stylesheet" href="./css/estilo.css">
 </head>
-<body bgcolor="#7F9183">
+<body bgcolor="#94d2bd">
     <?php
         menu();
         /* PARA MOSTRAR ERRORES EN MAC */
@@ -27,10 +28,10 @@
         if($comando->num_rows>0)
         {
             echo "Usuarios totales: ".$comando->num_rows;
-            echo "<table border='1' bgcolor='#B8B8AA'><tr><th colspan='9'>PERSONAL DE ABARROTES RUBÉN</th><tr><th>Primer apellido</th><th>Segundo apellido</th></th><th>Nombres</th><th>Email</th><th>Password</th><th>RFC</th><th>CURP</th><th>Eliminar</th><th>Modificar</th></tr>";
+            echo "<table border='1' bgcolor='#ee9b00'><tr><th colspan='9'>PERSONAL DE ABARROTES RUBÉN</th><tr><th>Primer apellido</th><th>Segundo apellido</th></th><th>Nombres</th><th>Email</th><th>Password</th><th>RFC</th><th>CURP</th><th>Eliminar</th><th>Modificar</th></tr>";
             while($registro=$comando->fetch_assoc())
             {
-                echo "\n\t<tr bgcolor='#B8B8AA'>
+                echo "\n\t<tr bgcolor='#e9d8a6'>
                 <td>".$registro["apellido1"]."</td>\n\t
                 <td>".$registro["apellido2"]."</td>\n\t
                 <td>".$registro["nombres"]."</td>\n\t

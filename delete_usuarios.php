@@ -1,5 +1,5 @@
 <?php
-    $codigo=$_GET['email'];
+    $email=$_GET['email'];
     
     try {
         $querydelete = "DELETE FROM usuarios WHERE email="."'".$email."'";
@@ -8,7 +8,7 @@
         /* ESTABLECEMOS LAS VARIABLES DE COMANDO*/
         $comando= mysqli_query($conexion, $querydelete);
     
-        header("location: productos.php");    
+        header("location: usuarios.php");    
     } catch (Exception $e) {
         //echo 'Excepción capturada: ',  $e->getMessage(), "\n";
         echo "Se ha detectado un acceso no admitido. Se reportará a las autoridades locales.";

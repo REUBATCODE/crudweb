@@ -1,5 +1,6 @@
 <?php
-include('./inc/functions');
+    include('./inc/functions');
+    validarUsuario();
 ?>
 <!DOCTYPE html>
 <html lang="en">

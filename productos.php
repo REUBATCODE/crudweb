@@ -1,5 +1,6 @@
 <?php
     include('inc/functions.php');
+    validarUsuario();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <title>Abarrotes Ruben</title>
 </head>
-<body bgcolor="#DA627D">
+<body bgcolor="#94d2bd">
     <?php
         menu();
         /* PARA MOSTRAR ERRORES EN MAC */
@@ -27,10 +28,10 @@
         if($comando->num_rows>0)
         {
             echo "Productos totales: ".$comando->num_rows;
-            echo "<table border='1' bgcolor='#FFA5AB'><tr><th colspan='5'>INVENTARIO DE ABARROTES RUBÉN</th><tr><th>Código</th><th>Producto</th></th><th>Precio</th><th>Eliminar</th><th>Modificar</th></tr>";
+            echo "<table border='1' bgcolor='#ee9b00'><tr><th colspan='5'>INVENTARIO DE ABARROTES RUBÉN</th><tr><th>Código</th><th>Producto</th></th><th>Precio</th><th>Eliminar</th><th>Modificar</th></tr>";
             while($registro=$comando->fetch_assoc())
             {
-                echo "\n\t<tr bgcolor='#FFA5AB'><td>".$registro["codigo"].
+                echo "\n\t<tr bgcolor='#e9d8a6'><td>".$registro["codigo"].
                 "</td>\n\t<td>".$registro["nombre"]."</td>\n\t<td>". $registro["precio"]."</td> 
                 <td> <a href='delete.php?codigo=".$registro['codigo']."'> <img src='./img/icon_delete.png'> </a> </td> 
                 <td> <a href='update.php?codigo=".$registro['codigo']."'> <img src='./img/icon_update.png'> </a> </td> </tr>\n";
